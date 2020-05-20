@@ -1,15 +1,13 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-class InputField extends StatelessWidget {
-  String labetext, hintext;
-  InputField({this.labetext, this.hintext});
-  @override
-  Widget build(Object context) {
-    return TextFormField(
-      decoration: InputDecoration(
-        labelText: this.labetext,
-        hintText: this.hintext,
-      ),
-    );
-  }
+Widget inputField(
+    String labeltext, String hinttext, TextEditingController controller) {
+  // String labeltext = labeltext;
+  return TextFormField(
+    controller: controller,
+    decoration: InputDecoration(
+      labelText: labeltext,
+      hintText: hinttext,
+    ),
+  );
 }

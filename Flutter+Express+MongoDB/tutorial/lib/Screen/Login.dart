@@ -9,6 +9,9 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    TextEditingController email = TextEditingController();
+    TextEditingController password = TextEditingController();
+
     return Scaffold(
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15),
@@ -16,14 +19,31 @@ class _LoginState extends State<Login> {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            InputField(
-              labetext: "Email",
-              hintext: "balram",
+            inputField(
+              "Email",
+              "balram",
+              email,
             ),
-            InputField(
-              labetext: "password",
-              hintext: "password",
+            inputField(
+              "password",
+              "password",
+              password,
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 50,
+              width: 200,
+              color: Colors.amberAccent,
+              child: InkWell(
+                onTap: () => {
+                  print(email.text),
+                  print(password.text),
+                },
+                child: Center(child: Text("tap it")),
+              ),
+            )
           ],
         ),
       ),
