@@ -3,12 +3,14 @@
 Content are like this
 
 1. Inside the Flutter+Express+MongoDB
-
-   1. Sign In Page
-      ![Sign In](https://github.com/balram0608/youtube-tutorial/blob/master/image/signIn.gif)
-
-   2. Sign Up Page
-      ![Sign Up](https://github.com/balram0608/youtube-tutorial/blob/master/image/signup.gif)
+   <h5>1. Sign In Page</h5>
+   <p align="center">
+     <img src="https://github.com/balram0608/youtube-tutorial/blob/master/image/signIn.gif" width="350" title="hover text" alt ="Sign In">
+     </p>
+     <h5>1. Sign Up Page</h5>
+     <p align="center">
+     <img src="https://github.com/balram0608/youtube-tutorial/blob/master/image/signup.gif" width="350"  alt="Sin Up">
+   </p>
 
    3. Video Link
 
