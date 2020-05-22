@@ -2,7 +2,7 @@
 
 Content are like this
 
-## Part-1
+## Part-1 Blog-App [Video Link](https://youtu.be/T7evkslL650)
 
 1. Inside the Blog-App
 
@@ -20,7 +20,7 @@ Content are like this
 
    4. <h5>Blog Link</h5>
 
-## Part2
+## Part2 Blog-App (Ongoing)
 
 1. Rest Api Connection(Comming Soon)
 
