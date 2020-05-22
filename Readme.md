@@ -16,7 +16,7 @@ Content are like this
         <img src="https://github.com/balram0608/youtube-tutorial/blob/master/image/signup.gif" width="280" height="500"   alt="Sin Up">
       </p>
 
-   3. <h5>Video  <a href="https://youtu.be/T7evkslL650"> Link</h5>
+   3. <h5>For youtube video  <a href="https://youtu.be/T7evkslL650">click on this</a> </h5>
 
    4. <h5>Blog Link</h5>
 
