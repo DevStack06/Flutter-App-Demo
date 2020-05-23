@@ -1,45 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+import 'SignUp.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
 }
 
 class _LoginState extends State<Login> {
+  bool _passWis = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: 15,
+          horizontal: 25,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: RotateAnimatedTextKit(
-                  onTap: () {
-                    print("Tap Event");
-                  },
-                  text: ["Get AWESOME", "Get OPTIMISTIC", "Get DIFFERENT"],
-                  textStyle: TextStyle(
-                      color: Colors.amberAccent,
-                      fontSize: 30.0,
-                      fontFamily: "Horizon",
-                      fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.start,
-                  alignment:
-                      AlignmentDirectional.topStart // or Alignment.topLeft
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RotateAnimatedTextKit(
+                    onTap: () {
+                      print("Tap Event");
+                    },
+                    totalRepeatCount: 500,
+                    text: ["Get Ready !", "Get Onboard !", "Get Freind !"],
+                    textStyle: TextStyle(
+                        color: Colors.amberAccent,
+                        fontSize: 40.0,
+                        fontFamily: "Horizon",
+                        fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.start,
+                    alignment:
+                        AlignmentDirectional.topStart // or Alignment.topLeft
+                    ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  "Forgot password ?",
+                  style: TextStyle(
+                    color: Colors.amberAccent,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
                   ),
+                )
+              ],
             ),
             SizedBox(
               height: 10,
             ),
             inputField("Username or Email"),
-            inputField("Password"),
+            passInputField("Password"),
             SizedBox(
               height: 20,
             ),
@@ -67,13 +86,21 @@ class _LoginState extends State<Login> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?",
+                Text("Create a new account",
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(width: 10),
-                Text("Sign In",
-                    style: TextStyle(
-                        color: Colors.amberAccent,
-                        fontWeight: FontWeight.bold)),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => SignUp()));
+                  },
+                  child: Text("Sign Up",
+                      style: TextStyle(
+                          color: Colors.amberAccent,
+                          fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           ],
@@ -84,7 +111,7 @@ class _LoginState extends State<Login> {
 
   Widget inputField(String hintText) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: Container(
         padding: EdgeInsets.only(left: 10),
         decoration: BoxDecoration(
@@ -95,6 +122,37 @@ class _LoginState extends State<Login> {
             )),
         child: TextFormField(
           decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: hintText,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget passInputField(String hintText) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
+      child: Container(
+        padding: EdgeInsets.only(left: 10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.amberAccent,
+              width: 4,
+            )),
+        child: TextFormField(
+          obscureText: _passWis,
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+                icon: _passWis
+                    ? Icon(Icons.visibility_off)
+                    : Icon(Icons.visibility),
+                onPressed: () => {
+                      setState(() {
+                        _passWis = !_passWis;
+                      })
+                    }),
             border: InputBorder.none,
             hintText: hintText,
           ),

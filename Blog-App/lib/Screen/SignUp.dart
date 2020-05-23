@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:frontend/Screen/Login.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -7,6 +8,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  List<bool> _pass = [true, true];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,28 +20,34 @@ class _SignUpState extends State<SignUp> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TypewriterAnimatedTextKit(
-                onTap: () {
-                  print("Tap Event");
-                },
-                text: ["Get Onbord here!"],
-                totalRepeatCount: 500,
-                speed: Duration(milliseconds: 500),
-                textStyle: TextStyle(
-                    fontSize: 30.0,
-                    fontFamily: "Agne",
-                    fontWeight: FontWeight.bold,
-                    color: Colors.amberAccent),
-                textAlign: TextAlign.start,
-                alignment: AlignmentDirectional.topStart // or Alignment.topLeft
-                ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TypewriterAnimatedTextKit(
+                    onTap: () {
+                      print("Tap Event");
+                    },
+                    text: ["Get Onbord here!"],
+                    totalRepeatCount: 500,
+                    speed: Duration(milliseconds: 500),
+                    textStyle: TextStyle(
+                        fontSize: 40.0,
+                        fontFamily: "Agne",
+                        fontWeight: FontWeight.bold,
+                        color: Colors.amberAccent),
+                    textAlign: TextAlign.start,
+                    alignment:
+                        AlignmentDirectional.topStart // or Alignment.topLeft
+                    ),
+              ],
+            ),
             SizedBox(
               height: 20,
             ),
             inputField("Username"),
             inputField("Email"),
-            inputField("Password"),
-            inputField("Confirm Password"),
+            passInputField("Password", 0),
+            passInputField("Confirm Password", 1),
             SizedBox(
               height: 20,
             ),
@@ -70,10 +78,18 @@ class _SignUpState extends State<SignUp> {
                 Text("Already have an account?",
                     style: TextStyle(fontWeight: FontWeight.bold)),
                 SizedBox(width: 10),
-                Text("Sign In",
-                    style: TextStyle(
-                        color: Colors.amberAccent,
-                        fontWeight: FontWeight.bold)),
+                InkWell(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext context) => Login()));
+                  },
+                  child: Text("Sign In",
+                      style: TextStyle(
+                          color: Colors.amberAccent,
+                          fontWeight: FontWeight.bold)),
+                ),
               ],
             ),
           ],
@@ -84,7 +100,7 @@ class _SignUpState extends State<SignUp> {
 
   Widget inputField(String hintText) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: Container(
         padding: EdgeInsets.only(left: 10),
         decoration: BoxDecoration(
@@ -103,33 +119,34 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Widget inputField2(String hintText) {
+  Widget passInputField(String hintText, int index) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: Container(
-          padding: EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Colors.amberAccent,
-                width: 4,
-              )),
-          child: Text("hello world")),
-    );
-  }
-
-  Widget inputField3(String hintText) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
-      child: Container(
-          padding: EdgeInsets.only(left: 10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: Colors.amberAccent,
-                width: 4,
-              )),
-          child: Text("hello world 2")),
+        padding: EdgeInsets.only(left: 10),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.amberAccent,
+              width: 4,
+            )),
+        child: TextFormField(
+          obscureText: _pass[index],
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+                icon: _pass[index]
+                    ? Icon(Icons.visibility_off)
+                    : Icon(Icons.visibility),
+                onPressed: () => {
+                      setState(() {
+                        _pass[index] = !_pass[index];
+                      })
+                    }),
+            border: InputBorder.none,
+            hintText: hintText,
+          ),
+        ),
+      ),
     );
   }
 }
