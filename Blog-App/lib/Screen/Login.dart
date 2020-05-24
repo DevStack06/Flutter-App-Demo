@@ -9,7 +9,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool _passWis = true;
+  List<bool> _pass = [true];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +58,7 @@ class _LoginState extends State<Login> {
               height: 10,
             ),
             inputField("Username or Email"),
-            passInputField("Password"),
+            passInputField("Password", 0),
             SizedBox(
               height: 20,
             ),
@@ -130,7 +130,7 @@ class _LoginState extends State<Login> {
     );
   }
 
-  Widget passInputField(String hintText) {
+  Widget passInputField(String hintText, int index) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: Container(
@@ -142,15 +142,15 @@ class _LoginState extends State<Login> {
               width: 4,
             )),
         child: TextFormField(
-          obscureText: _passWis,
+          obscureText: _pass[index],
           decoration: InputDecoration(
             suffixIcon: IconButton(
-                icon: _passWis
+                icon: _pass[index]
                     ? Icon(Icons.visibility_off)
                     : Icon(Icons.visibility),
                 onPressed: () => {
                       setState(() {
-                        _passWis = !_passWis;
+                        _pass[index] = !_pass[index];
                       })
                     }),
             border: InputBorder.none,
