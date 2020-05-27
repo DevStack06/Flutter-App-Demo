@@ -6,8 +6,9 @@ Content are like this
 
 1. [Yotube-Link](https://www.youtube.com/watch?v=T35T8nzyRDI)
 2. [Blog Link](https://medium.com/@balram0698/introduction-of-blog-app-development-from-scratch-blogapp-part-0-d19f6aef9299?source=---------4------------------)
+3. [Draw.io Link](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=SgStdr2rC7qg5bD1QRTW#G1hFM7_varv9C--swhLQEDc5JGPNZI7YgB)
 
-## Part-1 Blog-App [Video Link](https://youtu.be/T7evkslL650)
+## Part-1 Blog-App
 
 1. Inside the Blog-App
 
@@ -21,9 +22,9 @@ Content are like this
         <img src="https://github.com/balram0608/youtube-tutorial/blob/master/image/signup.gif" width="280" height="500"   alt="Sin Up">
       </p>
 
-   3. <h5>For youtube video  <a href="https://youtu.be/T7evkslL650">click on this</a> </h5>
+   3. <h5> <a href="https://youtu.be/T7evkslL650">Youtube link</a> </h5>
 
-   4. <h5>Blog Link <a href="https://medium.com/@balram0698/flutter-signin-and-signup-screen-with-dark-mode-bloagapp-part-1-9ea082bec82a?source=---------2------------------">click on this></h5>
+   4. <h5> <a href="https://medium.com/@balram0698/flutter-signin-and-signup-screen-with-dark-mode-bloagapp-part-1-9ea082bec82a?source=---------2------------------">Blog Link</h5>
 
 ## Part2 Blog-App (Ongoing)
 
