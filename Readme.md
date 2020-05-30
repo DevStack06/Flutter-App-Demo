@@ -35,20 +35,12 @@
 
    4. <h5> <a href="https://medium.com/@balram0698/flutter-signin-and-signup-screen-with-dark-mode-bloagapp-part-1-9ea082bec82a?source=---------2------------------">Blog Link</h5>
 
-## Part3 NodeJs and MongoDb installation with help of NVM
+## Part3 NodeJs and MongoDb installation with help of NVM [Youtube Link](https://www.youtube.com/watch?v=3Pol218EKcQ&t=8s)
 
-1. <h5> <a href="https://www.youtube.com/watch?v=3Pol218EKcQ&t=8s">Youtube link</a> </h5>
+## Part4 NodeJs:Bulding a simple Rest api with nodejs and expressjs [Youtube Link](https://www.youtube.com/watch?v=bDykTWre_5o)
 
-## Part4 NodeJs:Bulding a simple Rest api with nodejs and expressjs
-
-1. <h5> <a href="https://www.youtube.com/watch?v=bDykTWre_5o">Youtube link</a> </h5>
-
-## Part5 NodeJs:MongoDB connection with NodeJS using mongoose
-
-1. <h5> <a href="https://www.youtube.com/watch?v=kFJaXNP_YpI">Youtube link</a> </h5>
+## Part5 NodeJs:MongoDB connection with NodeJS using mongoose [Youtube Link](https://www.youtube.com/watch?v=kFJaXNP_YpI)
 
 ## Part6 Rest API connection with Blog-APP (Coming soon)
-
-1. <h5> <a href="#">Youtube link</a> </h5>
 
 **Thank You**
