@@ -1,12 +1,13 @@
 ### GitHub Repository for youtube tutorial, Youtube channel link [Dev Stack](https://www.youtube.com/channel/UCE9YNto5Fc8u7DdOTuCm8rw)
 
-## Tools and Technoly involve
+## Tools and Technology involve
 
 1. Flutter
 2. ExpressJs
 3. MongoDb
 4. Rest-API
 5. GCP
+6. Mongoose
 
 # Content of the video like this -:
 
