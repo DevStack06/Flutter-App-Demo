@@ -16,7 +16,7 @@
 2. [Blog Link](https://medium.com/@balram0698/introduction-of-blog-app-development-from-scratch-blogapp-part-0-d19f6aef9299?source=---------4------------------)
 3. [Draw.io Link](https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&page-id=SgStdr2rC7qg5bD1QRTW#G1hFM7_varv9C--swhLQEDc5JGPNZI7YgB)
 
-## Part-1 Blog-App
+## Part-1 and 2 Blog-App
 
 1. Inside the Blog-App
 
@@ -34,8 +34,20 @@
 
    4. <h5> <a href="https://medium.com/@balram0698/flutter-signin-and-signup-screen-with-dark-mode-bloagapp-part-1-9ea082bec82a?source=---------2------------------">Blog Link</h5>
 
-## Part2 Blog-App (Ongoing)
+## Part3 NodeJs and MongoDb installation with help of NVM
 
-1. Rest Api Connection(Comming Soon)
+1. <h5> <a href="https://www.youtube.com/watch?v=3Pol218EKcQ&t=8s">Youtube link</a> </h5>
+
+## Part4 NodeJs:Bulding a simple Rest api with nodejs and expressjs
+
+1. <h5> <a href="https://www.youtube.com/watch?v=bDykTWre_5o">Youtube link</a> </h5>
+
+## Part5 NodeJs:MongoDB connection with NodeJS using mongoose
+
+1. <h5> <a href="https://www.youtube.com/watch?v=kFJaXNP_YpI">Youtube link</a> </h5>
+
+## Part6 Rest API connection with Blog-APP (Coming soon)
+
+1. <h5> <a href="#">Youtube link</a> </h5>
 
 **Thank You**
