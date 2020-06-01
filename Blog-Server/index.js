@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const port = process.env.port || 5000;
+const app = express();
 
 mongoose.connect("mongodb://localhost:27017/AppDB", {
   useNewUrlParser: true,
@@ -12,13 +14,10 @@ connection.once("open", () => {
   console.log("MongoDb connected");
 });
 
-const port = process.env.port || 5000;
-const app = express();
-
 //middleware
 app.use(express.json());
-const user = require("./routes/user");
-app.use("/user", user);
+const userRoute = require("./routes/user");
+app.use("/user", userRoute);
 
 app.route("/").get((req, res) => res.json("hello world !"));
 
