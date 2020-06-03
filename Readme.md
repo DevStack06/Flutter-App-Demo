@@ -55,9 +55,9 @@
 1. [Youtube Link](https://www.youtube.com/watch?v=kRk8mPlM_RQ)
 2. [Blog Comming soon](#)
 
-## [7] Updating the user password and deleting a user end points
+## [7] NodeJS:Create an endpoint for delete a User and Update the User's Password || BlogApp -07
 
-1. [Youtube Link comming soon](#)
+1. [Youtube Link](https://www.youtube.com/watch?v=zl4WmDTVrIA)
 2. [Blog Comming soon](#)
 
 **Thank You**
