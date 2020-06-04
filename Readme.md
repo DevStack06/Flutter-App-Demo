@@ -49,6 +49,7 @@
 ## [5] NodeJs: Connect the MongoDB database with NodeJs using mongoose || ExpressJs || BlogApp 05
 
 1. [Youtube Link](https://www.youtube.com/watch?v=kFJaXNP_YpI)
+2. [Blog Link](https://medium.com/@balram0698/building-a-simple-rest-api-with-nodejs-and-express-blog-app-02-76d5715921e8?source=---------4------------------)
 
 ## [6] NodeJs: Rest API end point creation for User Registeration (SignUp) || MongoDB|| BlogApp-06
 
@@ -63,6 +64,11 @@
 ## [8] NodeJs: User SignIn(Login) endpoint creation for Blog-App || ExpressJS || MongoDB || BlogApp-08
 
 1. [Youtube Link](https://www.youtube.com/watch?v=CofTLSv7LXI)
+2. [Blog Comming soon](#)
+
+## [9] NodeJs: Working with JWT token and adding a middleware to validate it || ExpressJS || BlogApp-09
+
+1. [Youtube Link comming soon](#)
 2. [Blog Comming soon](#)
 
 **Thank You**
