@@ -36,6 +36,7 @@
 ## [2] Flutter: Show/Hide Password in TextFormField ||Build Blog App using Flutter Part-2
 
 1. [Youtube Link](https://www.youtube.com/watch?v=mYSADRPESec&t=381s)
+2. [Blog Link](https://medium.com/@balram0698/flutter-signin-and-signup-screen-with-dark-mode-bloagapp-part-1-9ea082bec82a?source=---------2------------------)
 
 ## [3] Install NodeJS using NVM on Linux Machine || Install MongoDB on Linux Machine || Blog-APP - 03
 
