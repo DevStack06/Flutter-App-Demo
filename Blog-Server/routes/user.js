@@ -1,9 +1,11 @@
 const express = require("express");
 const User = require("../models/users.model");
-
+const config = require("../config");
+const jwt = require("jsonwebtoken");
+let middleware = require("../middleware");
 const router = express.Router();
 
-router.route("/:username").get((req, res) => {
+router.route("/:username").get(middleware.checkToken, (req, res) => {
   User.findOne({ username: req.params.username }, (err, result) => {
     if (err) return res.status(500).json({ msg: err });
     return res.json({
@@ -21,7 +23,14 @@ router.route("/login").post((req, res) => {
     }
     if (result.password === req.body.password) {
       // here we implement the JWT token functionality
-      res.json("token");
+      let token = jwt.sign({ username: req.body.username }, config.key, {
+        expiresIn: "24h", //expire in 24 hours
+      });
+
+      res.json({
+        token: token,
+        msg: "success",
+      });
     } else {
       res.status(403).json("password is incorrect");
     }
@@ -46,7 +55,7 @@ router.route("/register").post((req, res) => {
     });
 });
 
-router.route("/update/:username").patch((req, res) => {
+router.route("/update/:username").patch(middleware.checkToken, (req, res) => {
   User.findOneAndUpdate(
     { username: req.params.username },
     { $set: { password: req.body.password } },
@@ -61,7 +70,7 @@ router.route("/update/:username").patch((req, res) => {
   );
 });
 
-router.route("/delete/:username").delete((req, res) => {
+router.route("/delete/:username").delete(middleware.checkToken, (req, res) => {
   User.findOneAndDelete({ username: req.params.username }, (err, result) => {
     if (err) return res.status(500).json({ msg: err });
     const msg = {
