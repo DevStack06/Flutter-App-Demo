@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.route("/:username").get((req, res) => {
   User.findOne({ username: req.params.username }, (err, result) => {
-    if (err) res.status(500).json({ msg: err });
-    res.json({
+    if (err) return res.status(500).json({ msg: err });
+    return res.json({
       data: result,
       username: req.params.username,
     });
@@ -44,7 +44,6 @@ router.route("/register").post((req, res) => {
     .catch((err) => {
       res.status(403).json({ msg: err });
     });
-  res.json("registerd");
 });
 
 router.route("/update/:username").patch((req, res) => {
