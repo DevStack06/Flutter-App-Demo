@@ -67,9 +67,9 @@
 1. [Youtube Link](https://www.youtube.com/watch?v=CofTLSv7LXI)
 2. [Blog Comming soon](#)
 
-## [9] NodeJs: Working with JWT token and adding a middleware to validate it || ExpressJS || BlogApp-09
+## [9] NodeJs: Working with JWT token and adding middleware to Validate it || ExpressJS || BlogApp-09
 
-1. [Youtube Link comming soon](#)
+1. [Youtube Link](https://www.youtube.com/watch?v=BeJJhXZ60Fw)
 2. [Blog Comming soon](#)
 
 **Thank You**
