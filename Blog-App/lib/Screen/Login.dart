@@ -144,6 +144,9 @@ class _LoginState extends State<Login> {
         return null;
       },
       decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
+        ),
         border: InputBorder.none,
         hintText: hintText,
       ),
@@ -159,6 +162,9 @@ class _LoginState extends State<Login> {
       },
       obscureText: _pass[index],
       decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
+        ),
         suffixIcon: IconButton(
             icon: _pass[index]
                 ? Icon(Icons.visibility_off)
