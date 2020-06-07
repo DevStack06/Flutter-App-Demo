@@ -9,6 +9,15 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> {
   List<bool> _pass = [true, true];
+  final userGlobalKey = GlobalKey<FormState>();
+  final emailGlobalKey = GlobalKey<FormState>();
+  final passGlobalKey = GlobalKey<FormState>();
+  final confPassGlobalKey = GlobalKey<FormState>();
+  final userText = TextEditingController();
+  final emailText = TextEditingController();
+  final passText = TextEditingController();
+  final confPassText = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,27 +53,50 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               height: 20,
             ),
-            inputField("Username"),
-            inputField("Email"),
-            passInputField("Password", 0),
-            passInputField("Confirm Password", 1),
+            borderContainer(
+              userInputField("Username"),
+              userGlobalKey,
+            ),
+            borderContainer(
+              emailInputField("Email"),
+              emailGlobalKey,
+            ),
+            borderContainer(
+              passInputField("Password", 0),
+              passGlobalKey,
+            ),
+            borderContainer(
+              confPassInputField("Confirm Password", 1),
+              confPassGlobalKey,
+            ),
             SizedBox(
               height: 20,
             ),
-            Container(
-              height: 50,
-              width: MediaQuery.of(context).size.width - 150,
-              decoration: BoxDecoration(
-                color: Colors.amberAccent,
-                borderRadius: BorderRadius.circular(30),
-              ),
-              child: Center(
-                child: Text(
-                  "Sign Up",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+            InkWell(
+              onTap: () {
+                if (userGlobalKey.currentState.validate() &&
+                    emailGlobalKey.currentState.validate() &&
+                    passGlobalKey.currentState.validate() &&
+                    confPassGlobalKey.currentState.validate()) {
+                  // api call will happend
+                  print("validate");
+                }
+              },
+              child: Container(
+                height: 50,
+                width: MediaQuery.of(context).size.width - 150,
+                decoration: BoxDecoration(
+                  color: Colors.amberAccent,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Center(
+                  child: Text(
+                    "Sign Up",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ),
@@ -98,7 +130,7 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  Widget inputField(String hintText) {
+  Widget borderContainer(Widget child, GlobalKey key) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
       child: Container(
@@ -109,43 +141,104 @@ class _SignUpState extends State<SignUp> {
               color: Colors.amberAccent,
               width: 4,
             )),
-        child: TextFormField(
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: hintText,
-          ),
+        child: Form(key: key, child: child),
+      ),
+    );
+  }
+
+  Widget userInputField(String hintText) {
+    return TextFormField(
+      controller: userText,
+      validator: (value) {
+        if (value.isEmpty) return "Username can't be empty";
+        return null;
+      },
+      decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
         ),
+        border: InputBorder.none,
+        hintText: hintText,
+      ),
+    );
+  }
+
+  Widget emailInputField(String hintText) {
+    return TextFormField(
+      controller: emailText,
+      validator: (value) {
+        if (value.isEmpty)
+          return "Email can't be empty";
+        else if (!value.contains("@")) return "Email is invalid formate";
+        return null;
+      },
+      decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
+        ),
+        border: InputBorder.none,
+        hintText: hintText,
       ),
     );
   }
 
   Widget passInputField(String hintText, int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 30),
-      child: Container(
-        padding: EdgeInsets.only(left: 10),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            border: Border.all(
-              color: Colors.amberAccent,
-              width: 4,
-            )),
-        child: TextFormField(
-          obscureText: _pass[index],
-          decoration: InputDecoration(
-            suffixIcon: IconButton(
-                icon: _pass[index]
-                    ? Icon(Icons.visibility_off)
-                    : Icon(Icons.visibility),
-                onPressed: () => {
-                      setState(() {
-                        _pass[index] = !_pass[index];
-                      })
-                    }),
-            border: InputBorder.none,
-            hintText: hintText,
-          ),
+    return TextFormField(
+      controller: passText,
+      validator: (value) {
+        if (value.isEmpty)
+          return " password can't be empty";
+        else if (value.length > 8) return "passworld lenght must be >=8";
+        return null;
+      },
+      obscureText: _pass[index],
+      decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
         ),
+        suffixIcon: IconButton(
+            icon: _pass[index]
+                ? Icon(Icons.visibility_off)
+                : Icon(Icons.visibility),
+            onPressed: () => {
+                  setState(() {
+                    _pass[index] = !_pass[index];
+                  })
+                }),
+        border: InputBorder.none,
+        hintText: hintText,
+      ),
+    );
+  }
+
+  Widget confPassInputField(String hintText, int index) {
+    return TextFormField(
+      controller: confPassText,
+      validator: (value) {
+        if (value.isEmpty)
+          return " password can't be empty";
+        else if (value.length > 8)
+          return "passworld lenght must be >=8";
+        else if (value != passText.text)
+          return "Password and confirm password are not same";
+        return null;
+      },
+      obscureText: _pass[index],
+      decoration: InputDecoration(
+        errorStyle: TextStyle(
+          fontSize: 18,
+        ),
+        suffixIcon: IconButton(
+            icon: _pass[index]
+                ? Icon(Icons.visibility_off)
+                : Icon(Icons.visibility),
+            onPressed: () => {
+                  setState(() {
+                    _pass[index] = !_pass[index];
+                  })
+                }),
+        border: InputBorder.none,
+        hintText: hintText,
       ),
     );
   }
