@@ -55,17 +55,17 @@
 ## [6] NodeJs: Rest API end point creation for User Registeration (SignUp) || MongoDB|| BlogApp-06
 
 1. [Youtube Link](https://www.youtube.com/watch?v=kRk8mPlM_RQ)
-2. [Blog Comming soon](#)
+2. [Blog Link](https://medium.com/@balram0698/nodejs-user-signin-and-signup-endpoint-creation-using-nodejs-and-expressjs-mongodb-blog-app-f83b8c7801b0)
 
 ## [7] NodeJS:Create an endpoint for delete a User and Update the User's Password || BlogApp -07
 
 1. [Youtube Link](https://www.youtube.com/watch?v=zl4WmDTVrIA)
-2. [Blog Comming soon](#)
+2. [Blog Link](https://medium.com/@balram0698/nodejs-user-signin-and-signup-endpoint-creation-using-nodejs-and-expressjs-mongodb-blog-app-f83b8c7801b0)
 
 ## [8] NodeJs: User SignIn(Login) endpoint creation for Blog-App || ExpressJS || MongoDB || BlogApp-08
 
 1. [Youtube Link](https://www.youtube.com/watch?v=CofTLSv7LXI)
-2. [Blog Comming soon](#)
+2. [Blog Link](https://medium.com/@balram0698/nodejs-user-signin-and-signup-endpoint-creation-using-nodejs-and-expressjs-mongodb-blog-app-f83b8c7801b0)
 
 ## [9] NodeJs: Working with JWT token and adding middleware to Validate it || ExpressJS || BlogApp-09
 
