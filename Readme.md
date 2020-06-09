@@ -72,4 +72,14 @@
 1. [Youtube Link](https://www.youtube.com/watch?v=BeJJhXZ60Fw)
 2. [Blog Comming soon](#)
 
+## [Additional] NodeJs:Connect the MongoDb Atlas remote server(Free) to NodeJs application || Optional Part BlogApp
+
+1. [Youtube Link](https://www.youtube.com/watch?v=8hYmtIi9Pfk)
+2. [Blog Comming soon](#)
+
+## [Additional] NodeJs: Deploy the NodeJs Application on Heroku || Optional part BlogApp
+
+1. [Youtube Link](https://www.youtube.com/watch?v=_Cq5pQTIhWQ&t=1s)
+2. [Blog Comming soon](#)
+
 **Thank You**
